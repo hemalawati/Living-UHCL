@@ -1,0 +1,156 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 21, 2015, 10:36:38 PM
+    Author     : saikrishnayadav
+*/
+
+html,  ul, li,  h2, h3, h4 {
+	margin: 0px;
+	padding: 0px;
+	color: #040400;
+	list-style: none;
+       text-align: center;
+}
+ body {
+	margin: 0px;
+	padding: 0px;
+	color: #040400;
+	list-style: none;
+       text-align: center;
+       background-image: url("../resources/living.jpg");
+}
+h1{
+	color: black;
+	}
+h1 img {
+	display: block;
+}
+img {
+	border: 0px;
+}
+p {
+	margin: 0.5em 0px;
+}
+a {
+	color: blue;
+	text-decoration: none;
+}
+table{
+    
+}
+table tr{
+    
+}
+a:hover {
+	color: red;
+	text-decoration: none;
+	font-weight: bold;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.more {
+	text-align: right;
+}
+.clear {
+	clear: both;
+}
+
+body {
+	background:  #FFFFCC;
+	font: 12px arial, medium;
+}
+.order-table{   
+	border-collapse:collapse;
+}
+ 
+.order-table-header{
+	text-align:center;
+	background:none repeat scroll 0 0 #E5E5E5;
+	border-bottom:1px solid #BBBBBB;
+	padding:16px;
+}
+ 
+.order-table-odd-row{
+	text-align:center;
+	background:none repeat scroll 0 0 #FFFFFFF;
+	border-top:1px solid #BBBBBB;
+}
+ 
+.order-table-even-row{
+	text-align:center;
+	background:none repeat scroll 0 0 #F9F9F9;
+	border-top:1px solid #BBBBBB;
+}
+#wrapper {
+	margin:auto;
+	position:relative;
+	text-align:left;
+	width: 855px;
+}
+div.lt {
+padding: 10px;
+position: absolute;
+left: 2px;
+top: 170px;
+width: 250px;
+height: 350px;
+font: 15px MV Boli;
+}
+
+	
+	div.lt.lnk 
+	{
+	font-family: serif;
+	padding: 18em;
+	}
+#header {
+	position: absolute;
+	top: 30px;
+	left: 13px;
+	width: 100%;
+	
+	height: 284px;
+}
+#header h1 {
+	
+	height: 184px;
+	width: 282px;
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	line-height: 1;
+}
+#header h1 em {
+	display: block;
+	padding: 23px 0 0 70px;
+	margin: 0;
+	font-weight: normal;
+	font-size: 28px;
+	font-family: "Times new roman", serif;
+}
+#header h1 strong {
+	display: block;
+	margin: 0px;
+	padding: 0px 0px 0px 90px;
+	font-weight: normal;
+	font-size: 15px;
+	font-family: verdana, arial, sans-serif;
+}
+
+.buttons:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}

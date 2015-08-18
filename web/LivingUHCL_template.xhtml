@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    </h:head>
+
+    <h:body>
+
+        <div id="top" style="height: 40%; width:auto; margin: 0; padding: 0;">
+            <ui:insert name="top">
+                
+                <nav class="navbar navbar-inverse navbar-fixed-top">
+                    <div class="container-fluid">
+                        <!-- Living UHCL logo image in header -->
+                        <div class="navbar-header">
+                            <h:graphicImage value="/images/logo.png" style="background: rgba(238, 240, 241, 0.1); height: 80px"/>         
+                        </div>
+
+                        <!-- Input Text and Search -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                            <h:form class="navbar-form navbar-left" role="search" style="margin-top: 1%">
+                                <div class="form-group" style="vertical-align: middle">
+                                    <h:inputText class="form-control" value="#{index.getaCustomer().inputKeyword}" style="width:200%;">
+                                        <f:passThroughAttribute name="placeholder" value="What are looking for?"/>
+                                    </h:inputText>
+
+                                </div>
+                                <h:commandLink class="btn btn-default" action="#{index.getaCustomer().searchByKeyword()}" style="position: relative; left: 180px">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </h:commandLink>
+                            </h:form>
+
+                            <!-- Menu and Logout-->
+                            <h:form>
+                                <div style="margin-top: 1%">
+                                    <ul class="nav navbar-nav navbar-right pull-right">
+                                        <li ><a style="font-size: 14px">Hello, #{index.name}</a></li>
+                                        <li><h:commandLink value="Home" action="#{index.home()}" style="font-size: 14px"></h:commandLink></li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="font-size: 14px">Menu <span class="caret"></span></a>
+                                            <ul class="dropdown-menu" role="menu" style="font-size: 14px" >
+                                                <li><h:commandLink value="View All Items" action="customer_all_items.xhtml"></h:commandLink></li>
+                                                <li><h:commandLink value="Categories" action="customer_category.xhtml"></h:commandLink></li>
+                                                <li class="divider"></li>
+                                                <li><h:commandLink value="Order History" action="customer_all_orders.xhtml"></h:commandLink></li>
+                                            </ul>
+                                        </li>
+                                        <li><h:commandLink value="Logout" action="index.xhtml" style="font-size: 14px"></h:commandLink></li>
+                                    </ul>
+                                </div>
+                            </h:form>
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
+            </ui:insert>
+        </div>
+
+        <div id="content" class="center_content" style="margin-top: 5%;padding: 0">
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+
+        <div id="bottom" align="center" class="nav navbar-fixed-bottom" style=" color: #7f8177;background-color: #93c54b; height: 50px;font-size: 15px;  padding-top: 15px">
+            <ui:insert name="bottom">
+                &copy;Living UHCL. All Rights Reserved.   
+            </ui:insert>
+        </div>
+
+    </h:body>
+
+</html>

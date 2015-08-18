@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Insert into data</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./LivingUHCL_template.xhtml">
+            <ui:define name="content">
+                <h:form>
+
+                    <div class="panel panel-primary">
+
+                        <!-- Default panel contents -->
+                        <div class="panel-heading"><h3 align="center">Enter the information below</h3></div>
+                        <table class="table-striped" align="center">
+                            <!--
+                            <tr><td>Item ID:&nbsp;</td><td style="padding-top: .5em; padding-bottom: .5em;"><h:inputText id="item_id" value="#{index.getaSeller().i.i_id}"></h:inputText></td>
+                            </tr>
+                            -->
+                            <tr>  <td>Item Type:&nbsp;</td><td style="padding-top: .5em;padding-bottom: .5em;"><h:inputText id="item_type" required="true" requiredMessage="Please enter the item type!" value="#{index.getaSeller().i.i_type}"></h:inputText><h:message for="item_type" style="color: red" class="glyphicon glyphicon-warning-sign"/></td>
+                            </tr><tr>  <td>Item Title:&nbsp;</td><td style="padding-top: .5em;padding-bottom: .5em;"><h:inputText id="item_title" required="true" requiredMessage="Please enter the item title!" value="#{index.getaSeller().i.i_title}"></h:inputText><h:message for="item_title" style="color: red" class="glyphicon glyphicon-warning-sign"/></td>
+                            </tr><tr>  <td>Item Category:&nbsp;</td><td style="padding-top: .5em; padding-bottom: .5em;"><h:inputText id="item_category" required="true" requiredMessage="Please enter the item category!" value="#{index.getaSeller().i.i_category}"></h:inputText><h:message for="item_category" style="color: red" class="glyphicon glyphicon-warning-sign"/></td>
+                            </tr><tr>  <td>Item Description:&nbsp;</td><td style="padding-top: .5em; padding-bottom: .5em;"><h:inputText id="item_description" required="true" requiredMessage="Please enter the item description!" value="#{index.getaSeller().i.i_description}"></h:inputText><h:message for="item_description" style="color: red" class="glyphicon glyphicon-warning-sign"/></td>
+                            </tr><tr>  <td>Item Price:&nbsp;</td><td style="padding-top: .5em; padding-bottom: .5em;"><h:inputText id="item_price" required="true" requiredMessage="Please enter the item price!" value="#{index.getaSeller().i.i_price}"></h:inputText><h:message for="item_rice" style="color: red" class="glyphicon glyphicon-warning-sign"/></td>
+                            </tr><tr>  <td>Minimum number of item purchase required:&nbsp;</td><td style="padding-top: .5em;padding-bottom: .5em;"><h:inputText id="item_min" required="true" requiredMessage="Please enter the minimum number of purchase required!" value="#{index.getaSeller().i.i_min}"></h:inputText><h:message for="item_min" style="color: red" class="glyphicon glyphicon-warning-sign"/></td>
+                            </tr><tr>  <td>Maximum number of item purchase required:&nbsp;</td><td style="padding-top: .5em; padding-bottom: .5em;"><h:inputText id="item_max" required="true" requiredMessage="Please enter the maximum number of purchase that can be made!" value="#{index.getaSeller().i.i_max}"></h:inputText><h:message for="item_max" style="color: red" class="glyphicon glyphicon-warning-sign"/></td>
+                            </tr><tr>  <td>Image path:&nbsp;</td><td style="padding-top: .5em; padding-bottom: .5em;"><h:inputText id="item_img" required="true" value="#{index.getaSeller().i.i_img}"></h:inputText><h:message for="item_type" style="color: red" class="glyphicon glyphicon-warning-sign"/></td>
+                            </tr><tr>  <td>Do you want to feature this item?</td><td style="padding-top: .8em; padding-bottom: .4em;"><h:selectOneRadio  id="item_featured" value="#{index.getaSeller().i.i_featured}" style="display: inline-table;">
+                                        <f:selectItem itemValue="true" itemLabel="Yes&nbsp;&nbsp;"></f:selectItem>
+                                        <f:selectItem itemValue="false" itemLabel="No"></f:selectItem>
+                                    </h:selectOneRadio></td>
+                            </tr></table>
+
+                        <br></br>
+                    </div>
+                    <h:commandButton value="Insert data into item table" action="#{index.getaSeller().insert()}" class="btn btn-primary btn-sm" style="margin-left: 32%;  width: 35%;" ></h:commandButton>
+                </h:form>
+                
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

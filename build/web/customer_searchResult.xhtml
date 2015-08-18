@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+        <title>LivingUHCL</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./LivingUHCL_template.xhtml">
+            <ui:define name="content">
+                <h:form>
+                    <center>
+                        <h:dataTable value="#{index.getaCustomer().searchResult}" style="width: 80%;vertical-align: middle " class="table table-striped" var="y">
+                            <h:column><h:commandLink action="#{index.viewCurrentItem(y)}"><h:graphicImage value="#{y.i_img}" style="width: 200px; height: 200px;"></h:graphicImage></h:commandLink></h:column>
+                            <h:column><f:facet name="header">ID</f:facet>#{y.i_title}</h:column>
+                            <h:column><f:facet name="header">Title</f:facet>#{y.i_title}</h:column>
+                            <h:column><f:facet name="header">Price</f:facet>$#{y.i_price}</h:column>
+                        </h:dataTable>
+                    </center>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

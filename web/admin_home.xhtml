@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Admin Home</title>
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+        <style type="text/css">
+            body{
+                font-weight:bold;
+                color:green;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <ui:composition template="./LivingUHCL_template.xhtml">
+            <ui:define name="content">
+                <h:form>
+                    <div class="panel panel-primary">
+
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">
+                            <h3 align="center">Following Items need Approval</h3></div>
+                        <!-- Invalid items display-->
+                        <div align="center" style="padding-top: 1%" >
+                            <h:selectManyCheckbox value="#{index.anAdmin.checkedItemID}" layout="pageDirection" class="table-striped" style="font-size: 15px">
+                                <f:selectItems value="#{index.anAdmin.pendingLisitngs}" var="z1" itemValue="#{z1.i_id}" itemLabel="&nbsp;ID: #{z1.i_id}&nbsp;&nbsp;&nbsp;Title: #{z1.i_title}&nbsp;&nbsp;&nbsp;Type: #{z1.i_type}&nbsp;&nbsp;&nbsp;Seller ID: #{z1.s_id}&nbsp;&nbsp;&nbsp;Price: #{z1.i_price}"><br/><br/>
+                                </f:selectItems>     
+                            </h:selectManyCheckbox>
+                        </div>
+                        <br/>
+                        <h:commandButton value="Approve" action="#{index.anAdmin.approveItems()}" class="btn btn-primary btn-sm" style="margin-left: 46%;"></h:commandButton>
+                        <br/><br/>
+                    </div>
+
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

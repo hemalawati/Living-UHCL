@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+        <title>Living UCHL</title>
+    </h:head>
+
+    <h:body>
+        <ui:composition template="./LivingUHCL_template.xhtml">
+            <ui:define name="content">
+                <h:form>
+                <center>
+                    <h2>Order Confirmation</h2><br/>
+                    Order ID :#{index.getaCustomer().newOrder.o_id}<br/>
+                    Item ID: #{index.getaCustomer().newOrder.i_id}<br/>
+
+                    <c:if test="#{index.getaCustomer().selectedItem.i_sold >= index.getaCustomer().selectedItem.i_min}">
+                        Your order is #{index.getaCustomer().newOrder.o_status}!
+                    </c:if>
+                    <c:if test="#{index.getaCustomer().selectedItem.i_min >= index.getaCustomer().selectedItem.i_sold +1}">
+                        Your order is currently  #{index.getaCustomer().newOrder.o_status}. It needs #{index.getaCustomer().selectedItem.i_min - index.getaCustomer().selectedItem.i_sold} more purchase(s) to make alive!
+                    </c:if>
+                    <br/>
+                    <br/>
+                    <h:commandButton class="btn-default" value="Home" action="#{index.home()}"/>
+                </center>
+                </h:form>
+            </ui:define>  
+        </ui:composition>
+    </h:body>
+
+
+
+    <h:body>
+        <link href="${facesContext.externalContext.requestContextPath}/resources/Styles.css"   
+              rel="stylesheet" type="text/css"/>
+        Confirmation message
+        Order ID :#{index.getaCustomer().newOrder.o_id}<br/>
+        #{index.getaCustomer().newOrder.i_id}<br/>
+
+        <c:if test="#{index.getaCustomer().selectedItem.i_sold >= index.getaCustomer().selectedItem.i_min}">
+            Your order is #{index.getaCustomer().newOrder.o_status}!
+        </c:if>
+        <c:if test="#{index.getaCustomer().selectedItem.i_min >= index.getaCustomer().selectedItem.i_sold +1}">
+            Your order is currently  #{index.getaCustomer().newOrder.o_status} and it needs #{index.getaCustomer().selectedItem.i_min - index.getaCustomer().selectedItem.i_sold} more purchase(s) to make alive!
+        </c:if>
+
+    </h:body>
+</html>
+

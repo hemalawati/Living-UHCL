@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+        <title>Living UHCL</title>
+
+
+    </h:head>
+
+    <h:body style="background-image: url('./images/welcome.jpg') ; background-size: cover ;background-repeat: no-repeat; font-family: Lucida Sans; font-size: 16px;" >
+
+        <div style="
+             position: absolute;
+             top:0;
+             bottom: 0;
+             left: 0;
+             right: 0;
+             margin: auto;
+             border-color: #BBBBBB; border-width: thin; border-style: ridge ; border-radius: 25px; width: 400px; height: 400px; background: rgba(238, 240, 241, 0.8); text-align: center ">
+
+            <h:graphicImage value="/images/logo.png" style="background-position: center; text-align: center " />
+            <h:form>
+
+                <table align="center"><tr>
+                        <td style="text-align: right"> User ID&nbsp;</td>
+
+                        <td style="padding-top: .5em;
+                            padding-bottom: .5em;"> <h:inputText value="#{index.id}"  
+                                        style="width: 169px;
+                                        height: 32px;
+                                        border: solid 2px #90A3E8;
+                                        padding: 2px;
+                                        border-radius: 5px;
+                                        font-size: 15px;
+                                        box-shadow: 0px 0px 0px 0px #9C9C9C;
+                                        background-color: #FFFFFF;
+                                        outline: none;
+                                        color: #474747;">
+                                <f:passThroughAttribute name="placeholder" value="Account ID"/>
+                            </h:inputText></td></tr>
+
+
+
+                    <tr><td style="text-align: right">Password&nbsp;</td>
+                        <td style="padding-top: .5em;
+                            padding-bottom: .5em;"> <h:inputSecret value="#{index.login_psw}"  
+                                          style="width: 169px;
+                                          height: 32px;
+                                          border: solid 2px #90A3E8;
+                                          padding: 2px;
+                                          border-radius: 5px;
+                                          font-size: 15px;
+                                          box-shadow: 0px 0px 0px 0px #9C9C9C;
+                                          background-color: #FFFFFF;
+                                          outline: none;
+                                          color: #474747;"><f:passThroughAttribute name="placeholder" value="Password"/></h:inputSecret></td></tr></table>
+
+                <br/>
+
+
+                <h:commandButton action="#{index.login()}" value="Login" styleClass="btn btn-primary btn-sm" style="margin-left:8%;  width: 30%;" />
+
+
+
+            </h:form>
+        </div>
+    </h:body>
+
+</html>
+
